@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A sample HTML5 page demonstrating lists, tables, media, and accessible forms with validation.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Accessibility and Forms Demo</title>
+</head>
+
+<body>
+    <!-- Page Header -->
+    <header>
+        <h1>Explore HTML5 Features</h1>
+        <p>Learn how to structure content, add media, and create accessible forms using only HTML5.</p>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#media">Media Gallery</a></li>
+                <li><a href="#pricing">Pricing Table</a></li>
+                <li><a href="#signup">Sign-Up Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Lists -->
+        <section id="features" aria-labelledby="features-heading">
+            <h2 id="features-heading">HTML5 Features Demonstrated</h2>
+
+            <article>
+                <h3>Core HTML5 Elements Used</h3>
+                <p>The page demonstrates the following HTML5 structural and semantic elements:</p>
+                <ul>
+                    <li><strong>Header & Footer</strong> – define the top and bottom content areas</li>
+                    <li><strong>Section & Article</strong> – organize information meaningfully</li>
+                    <li><strong>Audio, Video, and Figure</strong> – embed media content accessibly</li>
+                    <li><strong>Form Elements</strong> – support input validation natively</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Steps to Create a Semantic Page</h3>
+                <ol>
+                    <li>Plan your structure logically (header, main, footer).</li>
+                    <li>Use meaningful tags like <code>&lt;section&gt;</code> instead of <code>&lt;div&gt;</code>.</li>
+                    <li>Add descriptive headings and alt text for accessibility.</li>
+                    <li>Validate user input using HTML5 attributes.</li>
+                </ol>
+            </article>
+        </section>
+
+        <!-- Section 2: Media -->
+        <section id="media" aria-labelledby="media-heading">
+            <h2 id="media-heading">Media Gallery</h2>
+            <p>HTML5 makes it easy to embed rich media directly into your pages:</p>
+
+            <figure>
+                <img src="https://via.placeholder.com/400x200" alt="Placeholder image demonstrating HTML5 media support">
+                <figcaption>An example of an embedded image with descriptive alt text.</figcaption>
+            </figure>
+
+            <figure>
+                <figcaption>Sample HTML5 Audio</figcaption>
+                <audio controls>
+                    <source src="sample-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </figure>
+
+            <figure>
+                <figcaption>Sample HTML5 Video</figcaption>
+                <video controls width="400">
+                    <source src="sample-video.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            </figure>
+        </section>
+
+        <!-- Section 3: Table -->
+        <section id="pricing" aria-labelledby="pricing-heading">
+            <h2 id="pricing-heading">Pricing Table</h2>
+            <p>The table below is organized for accessibility with headers and a caption:</p>
+
+            <table>
+                <caption>Available Plans and Features</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Plan</th>
+                        <th scope="col">Features</th>
+                        <th scope="col">Price (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Basic</th>
+                        <td>Access to articles and tutorials</td>
+                        <td>$10/month</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pro</th>
+                        <td>Includes video lessons and downloads</td>
+                        <td>$25/month</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Premium</th>
+                        <td>All features + personalized coaching</td>
+                        <td>$50/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 4: Form -->
+        <section id="signup" aria-labelledby="signup-heading">
+            <h2 id="signup-heading">Sign Up for Our Newsletter</h2>
+            <p>Fill out the form below to stay updated. All fields marked with * are required.</p>
+
+            <form action="#" method="post" aria-label="Newsletter sign-up form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="fname">First Name *</label>
+                    <input type="text" id="fname" name="fname" required minlength="2" placeholder="Enter your first name">
+
+                    <label for="lname">Last Name *</label>
+                    <input type="text" id="lname" name="lname" required minlength="2" placeholder="Enter your last name">
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+
+                    <label for="plan">Choose a Plan:</label>
+                    <select id="plan" name="plan" required>
+                        <option value="">-- Select a Plan --</option>
+                        <option value="basic">Basic</option>
+                        <option value="pro">Pro</option>
+                        <option value="premium">Premium</option>
+                    </select>
+
+                    <p>Subscribe to topics of interest:</p>
+                    <ul>
+                        <li><label><input type="checkbox" name="topic" value="html"> HTML5</label></li>
+                        <li><label><input type="checkbox" name="topic" value="css"> CSS3</label></li>
+                        <li><label><input type="checkbox" name="topic" value="accessibility"> Accessibility</label></li>
+                    </ul>
+
+                    <p>Preferred Contact Method:</p>
+                    <label><input type="radio" name="contact" value="email" required> Email</label>
+                    <label><input type="radio" name="contact" value="phone"> Phone</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback</legend>
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" cols="40" placeholder="Your message..."></textarea>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 WebLearn Academy. Built with pure HTML5.</p>
+        <nav aria-label="Footer navigation">
+            <ul>
+                <li><a href="#features">Back to Top</a></li>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
